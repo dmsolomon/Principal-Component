@@ -16,7 +16,7 @@ principal_components = function (file_path)
   #Compute t(X) * X with nondimensional columns
   XTX=(n-1)*cor(X)
   
-  #COmpute eigenvalues and find principal components 
+  #Compute eigenvalues and find principal components 
   eig_XTX=eigen(XTX)
   Z=matrix(0L, nrow=nrow(stock_data), ncol=ncol(stock_data))
 
@@ -30,6 +30,6 @@ principal_components = function (file_path)
   print('Proportion of variance explained by each variable is:')
   print(eig_XTX$values/total_var)
   
-  #Return matrix Z where the ith column is the ith principal component 
+  #Return matrix Z where the ith column is the ith principal component (i=1,...,m)
   return(Z)
 }
